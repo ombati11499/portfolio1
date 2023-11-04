@@ -38,11 +38,11 @@ export type LinkProps =
   | "presentations"
   | "personal blog";
 
-interface IconProps{
-  name:string;
-  img:any;
+interface IconProps {
+  name: string;
+  img: any;
 }
-export const socialIcons:IconProps[] = [
+export const socialIcons: IconProps[] = [
   { name: "mail", img: mail },
   { name: "linkedIn", img: linkd },
   { name: "git", img: git },
@@ -82,13 +82,18 @@ const Home: React.FC = ({}: HomeProps) => {
   });
   const { currentPage } = state;
   // const blogUrl =process.env.blog as string
-const openLink =(name:string)=>{
-  name==='medium'?window.open("https://medium.com/@ombaticomori", "_blank"):name==='linkedIn'?
-  window.open("https://www.linkedin.com/in/christopher-omori-9042a5b7/", "_blank"):name==='git'?
-  window.open("https://github.com/ombati11499", "_blank"):null
-}
+
   const personalBlog = () => {
     window.open(import.meta.env.VITE_BLOG, "_blank");
+  };
+  const openLink = (name: string) => {
+    name === "medium"
+      ? personalBlog()
+      : name === "linkedIn"
+      ? window.open(import.meta.env.VITE_LINKD, "_blank")
+      : name === "git"
+      ? window.open(import.meta.env.VITE_GIT, "_blank")
+      : null;
   };
   const close = () => {
     setState({ ...state, currentPage: "home" });
@@ -126,20 +131,15 @@ const openLink =(name:string)=>{
           </div>
           <div style={styles.linkView}>
             {Links.map((link: LinkProps) => (
-              <Button
-                style={styles.btnLink}
-                onClick={() => changePage(link)}
-              >
+              <Button style={styles.btnLink} onClick={() => changePage(link)}>
                 <text>{link.toUpperCase()}</text>
               </Button>
             ))}
           </div>
           <div style={{ marginLeft: 38 }}>
             <p>GET IN TOUCH</p>
-            {socialIcons.map(({name, img}: IconProps) => (
-              <Button style={styles.btnLink}
-              onClick={()=>openLink(name)}
-              >
+            {socialIcons.map(({ name, img }: IconProps) => (
+              <Button style={styles.btnLink} onClick={() => openLink(name)}>
                 <img src={img} alt={name} style={styles.socialIcon} />
               </Button>
             ))}
