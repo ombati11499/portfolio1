@@ -1,12 +1,14 @@
 import Home from "./components/home";
 
-interface AppProps {}
+interface AppProps {
+}
 
 const App = ({}: AppProps) => {
   return (
     <>
       <div >
         <Home />
+        
       </div>
     </>
   );

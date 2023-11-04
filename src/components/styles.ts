@@ -40,8 +40,8 @@ const styles = {
   },
   btnLink: {
     backgroundColor: "transparent",
-    padding: 5,
-    marginLeft: 2,
+    margin: 5,
+    // marginLeft: 2,
   },
   socialIcon: {
     height: 25,
@@ -91,5 +91,24 @@ const styles = {
     fontSize: 14,
     color: "#fff",
   },
+  aboutBtn:{
+    backgroundColor:"transparent"
+  },
+hireView:{
+  backgroundColor:"white",
+  display:"flex",
+  flexDirection:"column",
+  // flex:1,
+  width:"50%",
+  // zIndex:1,
+  // justifyContent:"center", 
+  marginLeft:"40%",
+},
+detView:{
+  marginLeft:20
+},
+hireTitle:{
+  color:"black",
+}
 };
 export default styles as any;
