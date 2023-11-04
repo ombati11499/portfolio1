@@ -1,16 +1,15 @@
-import { Button, Typography } from "@mui/material";
 import styles from "./styles";
-import { LinkProps } from "./home";
+// import { LinkProps } from "./home";
 
 const AboutMe = () => {
-  const btns: LinkProps[] = [
-    "offer",
-    "portfolio",
-    "hire me",
-    "cv",
-    "presentations",
-    "personal blog",
-  ];
+  // const btns: LinkProps[] = [
+  //   "offer",
+  //   "portfolio",
+  //   "hire me",
+  //   "cv",
+  //   "presentations",
+  //   "personal blog",
+  // ];
   return (
     <div style={styles.portfolioView}>
       <p>About Me</p>
