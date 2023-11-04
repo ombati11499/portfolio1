@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { FaHeart } from "react-icons/fa";
 interface Props {
   close: () => void;
